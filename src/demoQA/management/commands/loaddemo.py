@@ -3,6 +3,7 @@ from django.contrib.auth.models import User , Group
 from laboratory.models import OrganizationStructure, PrincipalTechnician, Laboratory
 from constance import config
 import random
+import logging
 
 """
                     -------------------------
@@ -19,7 +20,7 @@ import random
 """
 
 class Command(BaseCommand):
-    
+
     def create_organization(self):
         """         -------------------------
                     |          root         |     * = GROUP_STUDENT
@@ -406,7 +407,10 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         self.create_organization()
+        logging.debug("Created organization")
         self.create_users()
+        logging.debug("Created users")
         self.create_labs()
+        logging.debug("Created laboratories")
         self.create_principal_technicians()
-        
+        logging.debug("Created principal technicians")

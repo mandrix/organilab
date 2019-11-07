@@ -104,14 +104,13 @@ def append_unit(string):
         unit = "px"
     return unit
 
-
+    
 def add_background(color):
     return "body{background-color:%s;}" % color
 
 
 def beginning_of_html():
     return "<!DOCTYPE html><html><head><style>"
-
 
 def ending_of_html():
     return "</body></html>"
@@ -127,4 +126,3 @@ def ending_of_styles():
 # Ending tags of html
 def ending_of_html():
     return "</body></html>"
- 

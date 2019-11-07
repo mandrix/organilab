@@ -1,7 +1,9 @@
 import json
 
+
 # Prepare and convert json objects into python objects
 def json2html(json_data, info_recipient):
+
     if type(json_data) == str:
         html_data = beginning_of_html()
         parsed_json = json.loads(json_data)
@@ -104,7 +106,6 @@ def append_unit(string):
         unit = "px"
     return unit
 
-    
 def add_background(color):
     return "body{background-color:%s;}" % color
 
@@ -122,6 +123,10 @@ def ending_of_styles():
     margin = "1mm"
     ending_tags = "@page {size: %s;margin: %s;} %s" % (size, margin, ending_tags)
     return ending_tags
+
+# Ending tags of html
+def ending_of_html():
+    return "</body></html>"
 
 # Ending tags of html
 def ending_of_html():
